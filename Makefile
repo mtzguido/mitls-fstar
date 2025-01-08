@@ -1,4 +1,4 @@
-FSTAR_HOME    ?= ../FStar
+FSTAR_EXE     ?= ../FStar/bin/fstar.exe
 KRML_HOME  ?= ../karamel
 HACL_HOME     ?= ../hacl-star
 MLCRYPTO_HOME ?= ../MLCrypto

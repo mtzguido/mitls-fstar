@@ -1,5 +1,5 @@
 MITLS_HOME ?= ../..
-FSTAR_HOME ?= ../../../FStar
+FSTAR_EXE  ?= ../../../FStar/bin/fstar.exe
 MLCRYPTO_HOME ?= ../../../MLCrypto
 EVERCRYPT_HOME ?= ../../../hacl-star/providers
 

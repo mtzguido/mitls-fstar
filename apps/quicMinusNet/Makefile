@@ -1,10 +1,8 @@
 MITLS_HOME ?= ../..
-FSTAR_HOME ?= ../../../FStar
+FSTAR_EXE  ?= ../../../FStar/bin/fstar.exe
 HACL_HOME ?= ../../../hacl-star
 MLCRYPTO_HOME ?= ../../../MLCrypto
 EVERCRYPT_HOME ?= $(HACL_HOME)/providers
-
-include $(FSTAR_HOME)/ulib/ml/Makefile.include
 
 UNAME=$(shell uname)
 MARCH?=x86_64

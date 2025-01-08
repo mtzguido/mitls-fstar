@@ -1,5 +1,4 @@
-FSTAR_HOME ?= ../../../FStar
-include $(FSTAR_HOME)/ulib/ml/Makefile.include
+FSTAR_EXE ?= ../../../FStar/bin/fstar.exe
 
 all: MiTLS_FFICallbacks.cmxa # MiTLS_FFICallbacks.cma
 
@@ -14,7 +13,7 @@ ffi.o MiTLS_FFICallbacks.cmo MiTLS_FFICallbacks.cmx: MiTLS_FFICallbacks.ml ffi.c
 	$(OCAMLOPT) -package batteries,zarith -c MiTLS_FFICallbacks.ml -ccopt -Wall -ccopt -fPIC ffi.c
 
 MiTLS_FFICallbacks.cmxa: MiTLS_FFICallbacks.cmx ffi.o
-	OCAMLPATH="$(FSTAR_HOME)/bin" ocamlfind mklib -o MiTLS_FFICallbacks MiTLS_FFICallbacks.cmx ffi.o
+	$(FSTAR_EXE) --ocamlenv ocamlfind mklib -o MiTLS_FFICallbacks MiTLS_FFICallbacks.cmx ffi.o
 
 MiTLS_FFICallbacks.cma: MiTLS_FFICallbacks.cmo ffi.o
-	OCAMLPATH="$(FSTAR_HOME)/bin" ocamlfind mklib -o MiTLS_FFICallbacks MiTLS_FFICallbacks.cmo ffi.o
+	$(FSTAR_EXE) --ocamlenv ocamlfind mklib -o MiTLS_FFICallbacks MiTLS_FFICallbacks.cmo ffi.o
